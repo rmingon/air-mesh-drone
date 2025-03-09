@@ -3120,6 +3120,377 @@
 				)
 			)
 		)
+		(symbol "Sensor_Magnetic:MMC5883MA"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -7.62 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "MMC5883MA"
+				(at 5.08 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Package_LGA:LGA-16_3x3mm_P0.5mm"
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.memsic.com/userfiles/files/DataSheets/Magnetic-Sensors-Datasheets/MMC5883MA-RevC.pdf"
+				(at -2.54 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "3-axis Magnetic Sensor, I2C Interface, LGA-16"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "I2C magnetic 3-axis sensor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*LGA*3x3mm*P0.5mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MMC5883MA_0_1"
+				(rectangle
+					(start -7.62 -5.08)
+					(end 7.62 5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "MMC5883MA_1_1"
+				(pin input line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "CAP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 2.54) hide
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 5.08 -5.08 90)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 7.62 270)
+					(length 2.54)
+					(name "VDDIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -2.54 -5.08 90)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "INT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 7.62 -5.08 180)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 7.62 2.54 180)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 7.62 5.08 180)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 7.62 -2.54 180)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -5.08 -5.08 90)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 2.54 -5.08 90)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Sensor_Motion:MPU-6050"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4858,6 +5229,12 @@
 		(uuid "e207d3a9-aaaf-487e-ae42-90cf1038de2c")
 	)
 	(junction
+		(at 165.1 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4644335-00aa-430f-ab79-6b447b51e413")
+	)
+	(junction
 		(at 40.64 97.79)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5275,6 +5652,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 162.56) (xy 167.64 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d523d40-efbf-42dc-9f35-62bccc4d1ec8")
+	)
+	(wire
+		(pts
 			(xy 248.92 115.57) (xy 248.92 111.76)
 		)
 		(stroke
@@ -5455,6 +5842,16 @@
 	)
 	(wire
 		(pts
+			(xy 180.34 186.69) (xy 180.34 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25f974d5-df71-47f5-9fa0-cdfb77e13c44")
+	)
+	(wire
+		(pts
 			(xy 96.52 67.31) (xy 96.52 71.12)
 		)
 		(stroke
@@ -5562,6 +5959,16 @@
 			(type default)
 		)
 		(uuid "2ca65cc1-a117-41f6-85d6-9dae9bc63a8d")
+	)
+	(wire
+		(pts
+			(xy 165.1 162.56) (xy 165.1 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f2100f7-2261-4c42-84a2-f41ab7d9d137")
 	)
 	(wire
 		(pts
@@ -6022,6 +6429,16 @@
 			(type default)
 		)
 		(uuid "57c727a6-5b6c-48f9-9455-0a431983dafb")
+	)
+	(wire
+		(pts
+			(xy 165.1 187.96) (xy 180.34 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58501125-ee58-4ebc-8136-a919ee8c4a93")
 	)
 	(wire
 		(pts
@@ -6775,6 +7192,16 @@
 	)
 	(wire
 		(pts
+			(xy 175.26 177.8) (xy 180.34 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9dac14b-f56a-4a7e-bc34-f797f6ac2d36")
+	)
+	(wire
+		(pts
 			(xy 78.74 43.18) (xy 85.09 43.18)
 		)
 		(stroke
@@ -6875,6 +7302,16 @@
 	)
 	(wire
 		(pts
+			(xy 167.64 162.56) (xy 167.64 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1fe0869-b4cc-4ec5-910e-33acaf33d600")
+	)
+	(wire
+		(pts
 			(xy 214.63 93.98) (xy 214.63 96.52)
 		)
 		(stroke
@@ -6902,6 +7339,16 @@
 			(type default)
 		)
 		(uuid "b73c0fe7-fdfa-4d50-b218-795ac113ccbc")
+	)
+	(wire
+		(pts
+			(xy 180.34 177.8) (xy 180.34 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b815fa4e-4377-4b78-a15f-cde2ee64d371")
 	)
 	(polyline
 		(pts
@@ -7282,6 +7729,16 @@
 			(type default)
 		)
 		(uuid "d90a2e8d-bfea-4fe8-8250-25cd80584ebe")
+	)
+	(wire
+		(pts
+			(xy 165.1 187.96) (xy 165.1 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da3e052a-97ba-4f1c-951b-50aadf19732d")
 	)
 	(polyline
 		(pts
@@ -7685,6 +8142,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 185.42) (xy 165.1 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc8bb9bf-b7a6-447e-8c2c-9dcc642a12f5")
+	)
+	(wire
+		(pts
 			(xy 123.19 101.6) (xy 137.16 101.6)
 		)
 		(stroke
@@ -7891,6 +8358,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SDA"
+		(shape input)
+		(at 154.94 177.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "10bb1013-679f-419d-a2c4-e7e81eeff552")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 148.9588 177.7206 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -8599,6 +9088,28 @@
 			)
 		)
 	)
+	(global_label "SCL"
+		(shape input)
+		(at 154.94 175.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "714a9737-17e3-45de-a14d-31f246b59c9b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 149.0193 175.1806 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape input)
 		(at 138.43 154.94 180)
@@ -9083,6 +9594,28 @@
 			)
 		)
 	)
+	(global_label "VCC"
+		(shape input)
+		(at 165.1 162.56 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b888de3e-5131-4d58-9913-56677606cdc0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 159.0583 162.4806 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape input)
 		(at 53.34 166.37 180)
@@ -9382,6 +9915,28 @@
 		(uuid "f9246430-6230-4255-ba4a-4230076ef419")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 125.7964 123.1106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 165.1 191.77 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fbe00700-e970-4740-9824-5fd1541a68af")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.8164 191.6906 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9909,6 +10464,76 @@
 			(project "drone"
 				(path "/8d172cff-266e-4e68-aa3f-17546d01ba91"
 					(reference "C8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 180.34 182.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "330e79a7-ad28-4516-bb23-bf0504382abd")
+		(property "Reference" "C10"
+			(at 184.15 181.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "C"
+			(at 184.15 184.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 181.3052 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 180.34 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 180.34 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8dabdb14-89b6-4309-bf6a-e2b15f3f13ff")
+		)
+		(pin "2"
+			(uuid "12c5bf81-6ab5-45f3-920a-ac159acac538")
+		)
+		(instances
+			(project "drone"
+				(path "/8d172cff-266e-4e68-aa3f-17546d01ba91"
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -10764,6 +11389,116 @@
 			(project "drone"
 				(path "/8d172cff-266e-4e68-aa3f-17546d01ba91"
 					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Sensor_Magnetic:MMC5883MA")
+		(at 165.1 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6a558632-56b4-4651-a1bd-1ec1d86a2c1e")
+		(property "Reference" "U7"
+			(at 180.34 171.4814 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MMC5883MA"
+			(at 180.34 174.0214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_LGA:LGA-16_3x3mm_P0.5mm"
+			(at 165.1 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.memsic.com/userfiles/files/DataSheets/Magnetic-Sensors-Datasheets/MMC5883MA-RevC.pdf"
+			(at 162.56 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "3-axis Magnetic Sensor, I2C Interface, LGA-16"
+			(at 165.1 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "15"
+			(uuid "556341f9-668c-4558-8049-4601fb0229a5")
+		)
+		(pin "16"
+			(uuid "43d70833-4084-44cb-b4cd-b019fa3287a6")
+		)
+		(pin "2"
+			(uuid "8e6638d2-2649-46c2-8043-35ee2b5fdb33")
+		)
+		(pin "1"
+			(uuid "e4d4fae9-b611-4d47-82cb-d02e8b6c6065")
+		)
+		(pin "14"
+			(uuid "13999e6f-42ae-4fa7-b5a6-255d4a917204")
+		)
+		(pin "13"
+			(uuid "911d416a-1b4e-4983-a619-f1a1920a7841")
+		)
+		(pin "9"
+			(uuid "3688f828-6e7c-4eb0-a5ad-96bf0350e76f")
+		)
+		(pin "6"
+			(uuid "6dfc7375-fc6d-41ac-87cd-3cc210311d0d")
+		)
+		(pin "7"
+			(uuid "e86edcbd-fbc1-45af-b658-cb4cbe2c47e4")
+		)
+		(pin "8"
+			(uuid "536c80dc-d630-4ec7-9d3f-5bfb2e4fa419")
+		)
+		(pin "10"
+			(uuid "aabc3702-0714-4da0-af58-43b40c1a3662")
+		)
+		(pin "3"
+			(uuid "2a572476-fa68-4b4d-80ff-1144b0653cda")
+		)
+		(pin "4"
+			(uuid "9374117b-42f3-4cc8-a85d-91b8def53240")
+		)
+		(pin "5"
+			(uuid "b3981158-d883-46a5-be7b-fc8eee8a1ff6")
+		)
+		(pin "11"
+			(uuid "8335b990-261b-48a3-b61b-27cecebf6455")
+		)
+		(pin "12"
+			(uuid "9612cc9d-b460-45c2-bcb6-d6a8cb580702")
+		)
+		(instances
+			(project ""
+				(path "/8d172cff-266e-4e68-aa3f-17546d01ba91"
+					(reference "U7")
 					(unit 1)
 				)
 			)
