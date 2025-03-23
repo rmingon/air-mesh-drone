@@ -8,8 +8,6 @@
 
 MPU6050 mpu;
 
-const int MPU_ADDR = 0x68; 
-
 const unsigned int UDP_PORT = 1234;
 
 const char *ssid = "drone-0001";
@@ -212,6 +210,7 @@ void handleUDP()
     DeserializationError error = deserializeJson(doc, incomingPacket);
     if (!error)
     {
+      // parse JSON sended by client with nunchuck
       JsonObject data = doc["data"];
       if (data.containsKey("joyX"))
         joyX = data["joyX"].as<int>();
