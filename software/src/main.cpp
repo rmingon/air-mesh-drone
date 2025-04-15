@@ -4,9 +4,9 @@
 #include <ArduinoJson.h>
 #include "secrets.h"
 #include <PID_v1.h>
-#include <MPU6050.h>
 
-MPU6050 mpu;
+#include <MPU6050_light.h>
+MPU6050 mpu(Wire);
 
 const unsigned int UDP_PORT = 1234;
 
@@ -49,7 +49,7 @@ int baseThrottle = 0;
 #define MOTOR3_PIN 27 // rear right
 #define MOTOR4_PIN 32 // rear left
 
-#define PWM_FREQ 20000 
+#define PWM_FREQ 1000 
 #define PWM_RES 8
 
 #define M1_CH 0
@@ -70,34 +70,12 @@ void setupMotors()
 
   ledcSetup(M4_CH, PWM_FREQ, PWM_RES);
   ledcAttachPin(MOTOR4_PIN, M4_CH);
-}
 
-void calibrateMPU(int samples = 500) {
-  long gx = 0, gy = 0, gz = 0;
-  long ax = 0, ay = 0, az = 0;
+  ledcWrite(M1_CH, 0);
+  ledcWrite(M2_CH, 0);
+  ledcWrite(M3_CH, 0);
+  ledcWrite(M4_CH, 0);
 
-  Serial.println("Calibrating MPU6050... Keep the drone still.");
-
-  for (int i = 0; i < samples; i++) {
-    int16_t acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z;
-    mpu.getMotion6(&acc_x, &acc_y, &acc_z, &gyr_x, &gyr_y, &gyr_z);
-
-    ax += acc_x;
-    ay += acc_y;
-    az += acc_z;
-    gx += gyr_x;
-    gy += gyr_y;
-    gz += gyr_z;
-
-    delay(3);
-  }
-
-  accX_offset = ax / (float)samples;
-  accY_offset = ay / (float)samples;
-  accZ_offset = (az / (float)samples) - 16384.0; // 1g compensation for Z
-  gyroX_offset = gx / (float)samples;
-  gyroY_offset = gy / (float)samples;
-  gyroZ_offset = gz / (float)samples;
 }
 
 void setup()
@@ -115,27 +93,25 @@ void setup()
 
   delay(5000);
 
-  mpu.initialize();
-  if (!mpu.testConnection()) {
-    Serial.println("MPU6050 connection failed");
-    while (1);
-  }
-  calibrateMPU();
+  byte status = mpu.begin();
+  while(status!=0){ } // stop everything if could not connect to MPU6050
+  mpu.calcOffsets(true,true); // gyro and accelero
 
   setupMotors();
+
+  delay(10000);
 
   pidRoll.SetMode(AUTOMATIC);
   pidPitch.SetMode(AUTOMATIC);
 }
 
 void handleUDP();
-void readMPU();
 
 void loop() {
-  readMPU();
+  mpu.update();
 
-  inputRoll = roll;
-  inputPitch = pitch;
+  inputRoll = mpu.getAngleX();
+  inputPitch = mpu.getAngleY();
 
   pidRoll.Compute();
   pidPitch.Compute();
@@ -145,10 +121,10 @@ void loop() {
   int motorBL = constrain(baseThrottle - outputRoll - outputPitch, 0, MAX_MOTOR);
   int motorBR = constrain(baseThrottle + outputRoll - outputPitch, 0, MAX_MOTOR);
 
-  ledcWrite(M1_CH, motorFL+(8/baseThrottle));
+  ledcWrite(M1_CH, motorFL);
   ledcWrite(M2_CH, motorFR);
-  ledcWrite(M3_CH, motorBL+(6/baseThrottle));
-  ledcWrite(M4_CH, motorBR+(6/baseThrottle));
+  ledcWrite(M3_CH, motorBL);
+  ledcWrite(M4_CH, motorBR);
 
   Serial.print("Roll: "); Serial.print(roll);
   Serial.print(" Pitch: "); Serial.print(pitch);
@@ -158,39 +134,6 @@ void loop() {
   delay(8);
 
   handleUDP();
-}
-
-void readMPU() {
-  int16_t rawAccX, rawAccY, rawAccZ, rawGyroX, rawGyroY, rawGyroZ;
-  mpu.getMotion6(&rawAccX, &rawAccY, &rawAccZ, &rawGyroX, &rawGyroY, &rawGyroZ);
-  
-  accX = rawAccX - accX_offset;
-  accY = rawAccY - accY_offset;
-  accZ = rawAccZ - accZ_offset;
-  
-  gyroX = rawGyroX - gyroX_offset;
-  gyroY = rawGyroY - gyroY_offset;
-  gyroZ = rawGyroZ - gyroZ_offset;
-
-  float accRoll  = atan2(accY, accZ) * RAD_TO_DEG;
-  float accPitch = atan2(-accX, sqrt(accY * accY + accZ * accZ)) * RAD_TO_DEG;
-
-  unsigned long currentTime = millis();
-  static unsigned long lastTime = currentTime;
-  float dt = (currentTime - lastTime) / 1000.0;
-  lastTime = currentTime;
-
-  float gyroRollRate = gyroX / 131.0;
-  float gyroPitchRate = gyroY / 131.0;
-  float gyroYawRate = gyroZ / 131.0;
-
-  roll  = 0.98 * (roll + gyroRollRate * dt) + 0.02 * accRoll;
-  pitch = 0.98 * (pitch + gyroPitchRate * dt) + 0.02 * accPitch;
-  yaw   += gyroYawRate * dt;  // Yaw only from gyro
-
-  // Optional: constrain yaw to 0-360°
-  if (yaw < 0) yaw += 360;
-  if (yaw >= 360) yaw -= 360;
 }
 
 void handleUDP()
