@@ -7579,28 +7579,6 @@
 			)
 		)
 	)
-	(global_label "MOTOR_4"
-		(shape input)
-		(at 275.59 83.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "03f0b4d4-a1f1-459f-b034-9ccec8953878")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 264.6498 83.7406 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "MOTOR_1"
 		(shape input)
 		(at 76.2 140.97 0)
@@ -7931,6 +7909,28 @@
 			)
 		)
 	)
+	(global_label "MOTOR_2"
+		(shape input)
+		(at 275.59 83.82 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3481984b-c432-4aca-bf3b-35424e5761b3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 264.6498 83.7406 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "D-"
 		(shape input)
 		(at 35.56 218.44 0)
@@ -8054,6 +8054,28 @@
 		(uuid "3de824fb-a834-4c14-909c-0728cec75e72")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 24.3502 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MOTOR_4"
+		(shape input)
+		(at 199.39 83.82 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3ecb8a96-4b33-4d0e-89d9-cfe8d5a24aca")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 188.4498 83.7406 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9093,28 +9115,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MOTOR_2"
-		(shape input)
-		(at 199.39 83.82 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "da711f61-8a2b-4897-8161-ed9999731207")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 188.4498 83.7406 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
